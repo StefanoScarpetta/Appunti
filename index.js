@@ -169,3 +169,82 @@ export default function Header() {
         <header>
         </header>
     )}
+
+
+const nums = [1, 2, 3, 4, 5]
+// -->       [1, 4, 9, 16, 25]
+const squares = nums.map(function(num) {
+    return num * num
+})
+
+
+const names = ["alice", "bob", "charlie", "danielle"]
+// -->        ["Alice", "Bob", "Charlie", "Danielle"]
+const capitalized = names.map(name => (
+    name[0].toUpperCase() + name.slice(1))
+)
+console.log(capitalized)
+
+
+import React from "react"
+import Joke from "./Joke"
+export default function App() {
+    return (
+        <div>
+            <Joke 
+                punchline="It’s hard to explain puns to kleptomaniacs because they always take things literally."/>
+            <Joke 
+                setup="I got my daughter a fridge for her birthday." 
+                punchline="I can't wait to see her face light up when she opens it." />
+        </div>
+    )}
+//file joke
+import React from "react"
+export default function Joke(props) {
+    return (
+        <div>
+            {props.setup && <h3>Setup: {props.setup}</h3>}
+            <p>Punchline: {props.punchline}</p>
+            <hr />
+        </div>
+    )}
+//versione ottimizzata ->
+export default function App() {
+    const jokeElements = jokesData.map(joke => {
+        return <Joke setup={joke.setup} punchline={joke.punchline} />
+    })
+    return (
+        <div>
+            {jokeElements}
+        </div>
+    )}
+
+
+export default function App() {
+    const colors = [
+            <h3>Red</h3>, 
+            <h3>Orange</h3>, 
+            <h3>Yellow</h3>,
+            <h3>Green</h3>,
+            <h3>Blue</h3>,
+            <h3>Indigo</h3>,
+            <h3>Violet</h3>
+        ]
+    return (
+        <div>
+            {colors}
+        </div>
+    )}
+
+
+export default function Card(props) {
+    let badgeText
+    if (props.openSpots === 0) {
+        badgeText = "SOLD OUT"
+    } else if (props.location === "Online") {
+        badgeText = "ONLINE"
+    }
+    return (
+        <div className="card">
+            {badgeText /*Se ha un valore*/ && <div className="card--badge">{badgeText}</div>} Questa scrittura significa che se la condizione è verificata allora mostra il div
+            <img src={`../images/${props.img}`} className="card--image" /></div>)}

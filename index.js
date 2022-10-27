@@ -442,14 +442,14 @@ return (
 )
 
 
-//Ternary example
-<button onClick={toggleShown}>{isShown ? "Hide" : "Show"} Punchline</button> //Se isShown è true il bottone recita Hide, se no Show 
-<div>
-    { messages.length === 0 ?
-      <h1>You're all caught up!</h1> :
-      <h1>You have {messages.length} unread 
-    { messages.length > 1 ? "messages" : "message"}</h1> }
-</div>
+//     Ternary example
+// <button onClick={toggleShown}>{isShown ? "Hide" : "Show"} Punchline</button> //Se isShown è true il bottone recita Hide, se no Show 
+// <div>
+//     { messages.length === 0 ?
+//       <h1>You're all caught up!</h1> :
+//       <h1>You have {messages.length} unread 
+//     { messages.length > 1 ? "messages" : "message"}</h1> }
+// </div>
 
 
 //Form
@@ -600,3 +600,13 @@ export default function WindowTracker() {
     return (
         <h1>Window width: {windowWidth}</h1>
     )}
+
+
+/*
+Competenze acquisite dal secondo macro progetto scrimba: meme generator
+- Event listeners
+- State
+- Conditional rendering
+- Forms
+- Side effects
+*/
